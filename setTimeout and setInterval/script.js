@@ -2,21 +2,34 @@ const btn = document.querySelector('.btn');
 let timer,
     i = 0;
 
-btn.addEventListener('click', () => {
-  // const timer = setTimeout(logger, 2000);
-  timer = setInterval(logger, 500);
-});
+function myAnimation() {
+  const elem = document.querySelector('.box');
+  let pos = 0;
 
-
-function logger() {
-  if (i === 3) {
-    clearInterval(timer);
+  const id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 300) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+    }
   }
-  console.log('text');
-  i++;
 }
 
-let id = setTimeout(function log() {
-  console.log('Hello!');
-  id = setTimeout(log, 500);
-}, 500);
+btn.addEventListener('click', myAnimation);
+
+
+// function logger() {
+//   if (i === 3) {
+//     clearInterval(timer);
+//   }
+//   console.log('text');
+//   i++;
+// }
+
+// let id = setTimeout(function log() {
+//   console.log('Hello!');
+//   id = setTimeout(log, 500);
+// }, 500);
