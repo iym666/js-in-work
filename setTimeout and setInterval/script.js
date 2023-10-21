@@ -1,6 +1,11 @@
-const timer = setTimeout(logger, 2000);
+const btn = document.querySelector('.btn');
 
-clearInterval(timer);
+btn.addEventListener('click', () => {
+  // const timer = setTimeout(logger, 2000);
+  const timer = setInterval(logger, 2000);
+});
+
+// clearInterval(timer);
 
 function logger() {
   console.log('text');
