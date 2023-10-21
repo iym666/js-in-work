@@ -1,12 +1,17 @@
 const btn = document.querySelector('.btn');
+let timer,
+    i = 0;
 
 btn.addEventListener('click', () => {
   // const timer = setTimeout(logger, 2000);
-  const timer = setInterval(logger, 2000);
+  timer = setInterval(logger, 500);
 });
 
-// clearInterval(timer);
 
 function logger() {
+  if (i === 3) {
+    clearInterval(timer);
+  }
   console.log('text');
+  i++;
 }
