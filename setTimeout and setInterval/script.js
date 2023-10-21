@@ -1,3 +1,3 @@
-const timer = setTimeout(() => {
-  console.log('Hello');
-}, 2000);
+const timer = setTimeout((text) => {
+  console.log(text);
+}, 2000, 'Hello!');
