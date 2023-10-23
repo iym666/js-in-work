@@ -86,10 +86,28 @@ window.addEventListener('DOMContentLoaded', () => {
       seconds.innerHTML = getZero(t.seconds);
 
       if (t.total <= 0) {
-        clearInterval(timeInterval());
+        clearInterval(timeInterval);
       }
     }
   }
 
   setClock('.timer', deadline);
+
+  // Modal
+
+  const modalTrigger = document.querySelector('[data-modal]'),
+        modal = document.querySelector('.modal'),
+        modalCloseBtn = document.querySelector('[data-close]');
+
+  modalTrigger.addEventListener('click', () => {
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    document.body.style.overflow = 'hidden';
+  });
+
+  modalCloseBtn.addEventListener('click', () => {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  });
 });
