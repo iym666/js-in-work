@@ -9,6 +9,20 @@ function User(name, id) {
   };
 }
 
+class User {
+  constructor(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+  }
+  hello() {
+    console.log(`Hello! ${this.name}`)
+  }
+  exit() {
+    console.log(`User ${this.name} exit`)
+  }
+}
+
 User.prototype.exit = function() {
   console.log(`User ${this.name} exit`)
 };
